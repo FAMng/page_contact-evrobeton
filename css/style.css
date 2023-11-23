@@ -1,0 +1,260 @@
+*  {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+@font-face {
+    font-family: "RFDewi400";
+    src: url("/fonts/RFDewi-Regular.woff2") format("woff2"), url("../fonts/RFDewi-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "RFDewi700";
+    src: url("/fonts/RFDewi-Bold.woff2") format("woff2"), url("../fonts/RFDewi-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "RFDewiExpanded800";
+    src: url("/fonts/RFDewiExpanded-Ultrabold.woff2") format("woff2"), url("../fonts/RFDewiExpanded-Ultrabold.woff") format("woff");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "RFDewiExpanded900";
+    src: url("/fonts/RFDewiExtended-Black.woff2") format("woff2"), url("../fonts/RFDewiExtended-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+.header__container{
+    background: #fff;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
+}
+.header__link-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 34px;
+    width: 34px;
+}
+.header__link-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+.header__btn-callback{
+    border: 2px solid #000;
+    display: flex;
+    padding: 10px 8px;
+    justify-content: center;
+    align-items: center;
+    background: none;
+
+    color: #000;
+    font-family: "RFDewi700", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.header__link-phone{
+    display: flex;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #E63E35;
+}
+.header__btn{
+    border: 2px solid #B8B8B8;
+    background: none;
+}
+.menu__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18px;
+    height: auto;
+    margin: 6px 3px;
+    padding: 6px 0;
+    min-height: 10px;
+    position: relative;
+    pointer-events: none;
+    z-index: -1;
+}
+.menu span {
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    border-radius: 4px;
+    position: absolute;
+    left: auto;
+    pointer-events: none;
+    z-index: -10;
+    transition: top 0.3s ease-out, transform 0.3s ease-out, width 0.3s ease-out, background-color 0.3s ease-out;
+}
+.menu span:first-child {
+    top: 0;
+}
+.menu span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: center;
+}
+.menu span:last-child {
+    bottom: 0;
+}
+.contacts{
+    display: flex;
+    flex-direction: column;
+}
+.contacts__info{
+    display: flex;
+    max-width: 375px;
+    padding: 32px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    background: #000;
+    color: #fff;
+}
+.contacts__info--container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+}
+.contacts__info-title{
+    font-family: "RFDewiExpanded800", sans-serif;
+    font-size: 34px;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+.contacts__info_connect--container{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.contacts__info_connect-title, .contacts__info_footer-title{
+    color: #5D5D5D;
+    font-family: "RFDewiExpanded900", sans-serif;
+    font-size: 18px;
+    line-height: 120%;
+}
+.contacts__info_connect-text, .contacts__info_footer-text{
+    font-family: "RFDewi400", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    text-wrap: unset;
+}
+.connect-text-link{
+    color: #E63E35;
+    font-family: "RFDewi400", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+}
+.contacts__info_connect-socials {
+    display: flex;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    gap: 16px;
+}
+.contacts__info_connect-social {
+    max-width: 100%;
+    max-height: 100%;
+}
+.contacts__info_footer{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contacts__people{
+    display: flex;
+    padding: 32px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    width: auto;
+}
+.contacts__people-office , .contacts__people-production{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+.contacts__people-office-title{
+    font-family: "RFDewiExpanded900", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 150%;
+    text-transform: uppercase;
+}
+.contacts__people_office-items{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.contacts__people_office-item{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    align-self: stretch;
+    list-style: none;
+}
+.contacts__people_office-item-text--name{
+    font-family: "RFDewiExpanded900", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+}
+.contacts__people_office-item-text--job-title {
+    color: #E63E35;
+    font-family: 'RFDewi400', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+.contacts__description{
+    display: flex;
+    max-width: 1279px;
+    justify-content: center;
+    align-self: center;
+}
+.contacts__description--container{
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    color:  #5D5D5D;
+}
+.contacts__description-item--title{
+    font-family: "RFDewiExpanded900" ,sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    margin-bottom: 16px;
+}
+.contacts__description-item--text{
+    font-family: "RFDewi400", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
