@@ -1,41 +1,14 @@
+@import url('../fonts/stylesheet.css');
 *  {
     padding: 0;
     margin: 0;
     border: 0;
 }
-@font-face {
-    font-family: "RFDewi400";
-    src: url("/fonts/RFDewi-Regular.woff2") format("woff2"), url("../fonts/RFDewi-Regular.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: "RFDewi700";
-    src: url("/fonts/RFDewi-Bold.woff2") format("woff2"), url("../fonts/RFDewi-Bold.woff") format("woff");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: "RFDewiExpanded800";
-    src: url("/fonts/RFDewiExpanded-Ultrabold.woff2") format("woff2"), url("../fonts/RFDewiExpanded-Ultrabold.woff") format("woff");
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: "RFDewiExpanded900";
-    src: url("/fonts/RFDewiExtended-Black.woff2") format("woff2"), url("../fonts/RFDewiExtended-Black.woff") format("woff");
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
 .header__container{
     background: #fff;
     padding: 8px 16px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     gap: 16px;
 }
@@ -45,6 +18,10 @@
     align-items: center;
     height: 34px;
     width: 34px;
+    gap: 20px;
+}
+.header__logo-text{
+    display: none;
 }
 .header__link-logo img {
     max-width: 100%;
@@ -60,9 +37,12 @@
     background: none;
 
     color: #000;
-    font-family: "RFDewi700", sans-serif;
+    font-family: "RF Dewi", sans-serif;
     font-size: 14px;
+    font-weight: 700;
     text-transform: uppercase;
+    white-space : nowrap;
+    transition: background-color 0.5s ease, color 0.5s ease  ;
 }
 .header__link-phone{
     display: flex;
@@ -71,54 +51,66 @@
     align-items: center;
     gap: 10px;
     border: 2px solid #E63E35;
+    text-decoration: none;
+}
+.header__btn-callback:hover{
+    cursor: pointer;
+    background: #161515;
+    color: #ffffff;
+    transition: background-color 0.5s ease, color 0.5s ease  ;
+}
+.header__link-phone--tel, .header__link-phone--description{
+    display: none;
 }
 .header__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 2px solid #B8B8B8;
     background: none;
+    width: 34px;
+    height: 34px;
+    margin-left: auto;
 }
 .menu__wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 18px;
-    height: auto;
-    margin: 6px 3px;
-    padding: 6px 0;
-    min-height: 10px;
-    position: relative;
-    pointer-events: none;
-    z-index: -1;
-}
-.menu span {
     display: inline-block;
-    width: 100%;
+    cursor: pointer;
+    padding: 6px;
+    position: relative;
+    z-index: 1;
+}
+
+.menu span {
+    display: block;
+    width: 18px;
     height: 2px;
     background-color: #000;
-    border-radius: 4px;
-    position: absolute;
-    left: auto;
-    pointer-events: none;
-    z-index: -10;
-    transition: top 0.3s ease-out, transform 0.3s ease-out, width 0.3s ease-out, background-color 0.3s ease-out;
-}
-.menu span:first-child {
-    top: 0;
-}
-.menu span:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
-    transform-origin: center;
+    margin-bottom: 4px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 }
 .menu span:last-child {
-    bottom: 0;
+    margin-bottom: 0;
+}
+.menu.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+    background-color: #000;
+}
+.menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+    background-color: #000;
 }
 .contacts{
     display: flex;
     flex-direction: column;
 }
+.header__menu{
+    display: none;
+}
 .contacts__info{
     display: flex;
-    max-width: 375px;
     padding: 32px 16px;
     flex-direction: column;
     align-items: flex-start;
@@ -134,10 +126,26 @@
     align-self: stretch;
 }
 .contacts__info-title{
-    font-family: "RFDewiExpanded800", sans-serif;
+    font-family: "RF Dewi Expanded", sans-serif;
     font-size: 34px;
     line-height: 120%;
+    font-weight: 800;
+    font-style: normal;
     text-transform: uppercase;
+}
+.instagram{
+    fill: white;
+}
+.instagram:hover{
+    fill: #E63E35;
+    transition: fill 0.5s ease;
+}
+.vk{
+    fill: white;
+}
+.vk:hover{
+    transition: fill 0.5s ease;
+    fill: #E63E35;
 }
 .contacts__info_connect--container{
     display: flex;
@@ -146,20 +154,23 @@
 }
 .contacts__info_connect-title, .contacts__info_footer-title{
     color: #5D5D5D;
-    font-family: "RFDewiExpanded900", sans-serif;
+    font-family: "RF Dewi Expanded", sans-serif;
     font-size: 18px;
+    font-weight: 900;
+    font-style: normal;
     line-height: 120%;
 }
 .contacts__info_connect-text, .contacts__info_footer-text{
-    font-family: "RFDewi400", sans-serif;
+    font-family: "RF Dewi", sans-serif;
     font-size: 16px;
+    font-weight: 400;
     line-height: 150%;
-    text-wrap: unset;
 }
 .connect-text-link{
     color: #E63E35;
-    font-family: "RFDewi400", sans-serif;
+    font-family: "RF Dewi", sans-serif;
     font-size: 16px;
+    font-weight: 400;
     line-height: 150%;
 }
 .contacts__info_connect-socials {
@@ -172,6 +183,7 @@
 .contacts__info_connect-social {
     max-width: 100%;
     max-height: 100%;
+    cursor: pointer;
 }
 .contacts__info_footer{
     display: flex;
@@ -185,9 +197,8 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
-    width: auto;
 }
-.contacts__people-office , .contacts__people-production{
+.contacts__people-office, .contacts__people-production{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -195,7 +206,7 @@
     align-self: stretch;
 }
 .contacts__people-office-title{
-    font-family: "RFDewiExpanded900", sans-serif;
+    font-family: "RF Dewi Expanded", sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 900;
@@ -215,7 +226,7 @@
     list-style: none;
 }
 .contacts__people_office-item-text--name{
-    font-family: "RFDewiExpanded900", sans-serif;
+    font-family: "RF Dewi Expanded", sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 900;
@@ -223,7 +234,7 @@
 }
 .contacts__people_office-item-text--job-title {
     color: #E63E35;
-    font-family: 'RFDewi400', sans-serif;
+    font-family: 'RF Dewi', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -243,7 +254,7 @@
     color:  #5D5D5D;
 }
 .contacts__description-item--title{
-    font-family: "RFDewiExpanded900" ,sans-serif;
+    font-family: "RF Dewi Expanded" ,sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 900;
@@ -251,10 +262,307 @@
     margin-bottom: 16px;
 }
 .contacts__description-item--text{
-    font-family: "RFDewi400", sans-serif;
+    font-family: "RF Dewi", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
+}
+.footer {
+    color: #fff;
+    background-color: #161515;
+}
+.footer__container {
+    display: flex;
+    padding: 32px 16px 62px 16px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 64px;
+    position: relative;
+}
+.footer__container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image:
+            linear-gradient(rgba(22, 21, 21, 0.8), rgba(22, 21, 21, 0.8)),
+            url("../img/footer-logo.png");
+    background-repeat: no-repeat;
+    background-size: 80vw; /* Размер первой части изображения */
+    background-position: right 100%;
+}
+.footer__title{
+    font-family: "RF Dewi Expanded", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 150%;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+.footer__subtext{
+    font-family: "RF Dewi",sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+.footer__left-section{
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    z-index: 2;
+}
+.footer__form{
+    display:flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.footer__form-text{
+    border: 2px solid #B8B8B8;
+    background: #FFF;
+    height: 34px;
+    padding-left:20px;
+    transition: color 0.5s ease, border 0.5s ease;
+}
+.footer__form-text:hover{
+    color: #000;
+    border: 2px solid #161515;
+    transition: color 0.5s ease, border 0.5s ease;
+}
+.footer__form-text:hover::placeholder{
+    color: #000;
+    transition: color 0.5s ease, border 0.5s ease;
+}
+.footer__form-comment{
+    border: 2px solid #B8B8B8;
+    background: #FFF;
+    height: 34px;
+    padding:20px 0 0 20px;
+}
+.footer__form-comment:hover::placeholder{
+    color: #000;
+    transition: color 0.5s ease, border 0.5s ease;
+}
+.footer__form-comment:hover{
+    border: 2px solid #161515;
+    transition: color 0.5s ease, border 0.5s ease;
+}
+.footer__form-btn{
+    color: #FFF;
+    font-family: "RF Dewi", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: uppercase;
+    width: 100%;
+    display: flex;
+    padding: 10px 8px;
+    justify-content: center;
+    align-items: center;
+    background: #B8B8B8;
+    transition: color 0.5s ease, background 0.5s ease;
+    cursor: pointer;
+}
+.footer__form-btn:hover{
+    background: #7c7c7c;
+    transition: color 0.5s ease, background 0.5s ease;
+}
+.footer__form-comment{
+    resize: vertical;
+}
+.footer__policy{
+    color: #5D5D5D;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+.footer__policy-link{
+    color: #E63E35;
+}
+.footer__right-section{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-family: "RF Dewi", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: right;
+    z-index: 2;
+}
+.footer__right-section_tel, .footer__right-section_mail{
+    color: #E63E35;
+    text-decoration: none;
+}
+.footer__right-section_rights{
+    color: #5D5D5D;
+    font-family: "RF Dewi", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+.footer__form--wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+@media (min-width:1024px){
+    .footer__container{
+        flex-direction: row;
+        padding: 102px 160px 59px 160px;
+        justify-content: space-between;
+        align-items: center;
+        background-size: 40vw;
+        background-position: right 120%;
+    }
+    .footer__container::after {
+        background-size: 40vw;
+        background-position: right 120%;
+    }
+    .footer__left-section{
+        display: flex;
+        width: 623px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        flex-shrink: 0;
+    }
+    .footer__form {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .footer__form--wrapper{
+        display: flex;
+        flex-direction: row;
+        width: 100%
+    }
+    .footer__form-text{
+        width: 100%;
+    }
+    .footer__form > :nth-child(2) {
+        flex-basis: 100%;
+    }
+    .footer__right-section{
+        align-self: flex-end;
+    }
+    .contacts__description--container{
+        margin: 100px 0 100px 0;
+    }
+    .contacts__people{
+        padding: 64px 160px 0 40px;
+        height: 90vh;
+        overflow-y: auto ;
+    }
+    .contacts__people::-webkit-scrollbar {
+        display: none;
+    }
+    .contacts__people-office{
+        flex-wrap: wrap;
+    }
+    .contacts__info{
+        padding: 64px 64px 64px 160px;
+    }
+    .contacts__container{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .contacts__people_office-items {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px 16px;
+    }
+    .header__logo-text{
+        display: inline;
+        text-transform: uppercase;
+        color: #2C2B2E;
+        font-family: "RF Dewi Expanded", sans-serif;
+        font-size: 31.197px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 120%;
+    }
+    .header__container{
+        justify-content: flex-start;
+        padding: 15px 160px;
+        gap: 32px;
+    }
+    .header__btn{
+        display: none;
+    }
+    .header__link-logo{
+        width: auto;
+        margin-right: auto;
+        cursor: pointer;
+    }
+    .header__link-phone{
+        flex-direction: column;
+        padding: 0;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 0;
+        border: none;
+    }
+    .header__image-phone{
+        display: none;
+    }
+    .header__link-phone--tel,.header__link-phone--description{
+        display: block;
+    }
+    .header__link-phone--tel{
+        color: #E63E35;
+        text-align: right;
+        font-family: "RF Dewi Expanded", sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 900;
+        white-space : nowrap;
+    }
+    .header__link-phone--description{
+        color: #000;
+        font-family: "RF Dewi", sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+    }
+    .header__menu{
+        display: block;
+        background: #000;
+        color: #fff;
+        text-decoration: none;
+    }
+    .header__menu-items{
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px 160px 10px 0;
+        gap: 42px;
+    }
+    .header__menu-item{
+        list-style-type:none;
+        display: flex;
+        padding: 16px;
+        justify-content: center;
+        align-items: center;
+        color: #B8B8B8;
+        font-family: "RF Dewi",sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+        text-transform: uppercase;
+    }
+    .header__menu-item:hover{
+        cursor: pointer;
+        color: #fff;
+        transition: color 0.5s ease;
+    }
 }
 
