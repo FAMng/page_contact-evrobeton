@@ -4,6 +4,12 @@
     margin: 0;
     border: 0;
 }
+body{
+    font-family: "RF Dewi", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
 .header__container{
     background: #fff;
     padding: 8px 16px;
@@ -16,8 +22,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 34px;
-    width: 34px;
     gap: 20px;
 }
 .header__logo-text{
@@ -161,16 +165,10 @@
     line-height: 120%;
 }
 .contacts__info_connect-text, .contacts__info_footer-text{
-    font-family: "RF Dewi", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
     line-height: 150%;
 }
 .connect-text-link{
     color: #E63E35;
-    font-family: "RF Dewi", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
     line-height: 150%;
 }
 .contacts__info_connect-socials {
@@ -234,10 +232,6 @@
 }
 .contacts__people_office-item-text--job-title {
     color: #E63E35;
-    font-family: 'RF Dewi', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 150%;
 }
 .contacts__description{
@@ -262,10 +256,6 @@
     margin-bottom: 16px;
 }
 .contacts__description-item--text{
-    font-family: "RF Dewi", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 150%;
 }
 .footer {
@@ -276,7 +266,6 @@
     display: flex;
     padding: 32px 16px 62px 16px;
     flex-direction: column;
-    align-items: flex-end;
     gap: 64px;
     position: relative;
 }
@@ -304,10 +293,6 @@
     margin-bottom: 16px;
 }
 .footer__subtext{
-    font-family: "RF Dewi",sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 150%;
 }
 .footer__left-section{
@@ -334,6 +319,9 @@
     transition: color 0.5s ease, border 0.5s ease;
 }
 .footer__form-text:hover::placeholder{
+    font-family: "RF Dewi", sans-serif;
+    font-style: normal;
+    font-weight: 400;
     color: #000;
     transition: color 0.5s ease, border 0.5s ease;
 }
@@ -389,10 +377,6 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    font-family: "RF Dewi", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 150%;
     text-align: right;
     z-index: 2;
@@ -403,10 +387,6 @@
 }
 .footer__right-section_rights{
     color: #5D5D5D;
-    font-family: "RF Dewi", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 150%;
 }
 .footer__form--wrapper{
@@ -414,45 +394,16 @@
     flex-direction: column;
     gap: 16px;
 }
-@media (min-width:1024px){
-    .footer__container{
-        flex-direction: row;
-        padding: 102px 160px 59px 160px;
-        justify-content: space-between;
-        align-items: center;
-        background-size: 40vw;
-        background-position: right 120%;
-    }
-    .footer__container::after {
-        background-size: 40vw;
-        background-position: right 120%;
-    }
-    .footer__left-section{
-        display: flex;
-        width: 623px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;
-        flex-shrink: 0;
-    }
-    .footer__form {
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-    .footer__form--wrapper{
-        display: flex;
-        flex-direction: row;
-        width: 100%
-    }
-    .footer__form-text{
-        width: 100%;
-    }
-    .footer__form > :nth-child(2) {
-        flex-basis: 100%;
-    }
-    .footer__right-section{
-        align-self: flex-end;
+@media (min-width:768px){
+    .header__logo-text{
+        display: block;
+        text-transform: uppercase;
+        color: #2C2B2E;
+        font-family: "RF Dewi Expanded", sans-serif;
+        font-size: 31.197px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 120%;
     }
     .contacts__description--container{
         margin: 100px 0 100px 0;
@@ -464,9 +415,6 @@
     }
     .contacts__people::-webkit-scrollbar {
         display: none;
-    }
-    .contacts__people-office{
-        flex-wrap: wrap;
     }
     .contacts__info{
         padding: 64px 64px 64px 160px;
@@ -480,16 +428,10 @@
         flex-wrap: wrap;
         gap: 30px 16px;
     }
-    .header__logo-text{
-        display: inline;
-        text-transform: uppercase;
-        color: #2C2B2E;
-        font-family: "RF Dewi Expanded", sans-serif;
-        font-size: 31.197px;
-        font-style: normal;
-        font-weight: 900;
-        line-height: 120%;
-    }
+
+}
+@media (min-width:1024px){
+
     .header__container{
         justify-content: flex-start;
         padding: 15px 160px;
@@ -528,10 +470,7 @@
     }
     .header__link-phone--description{
         color: #000;
-        font-family: "RF Dewi", sans-serif;
         font-size: 13px;
-        font-style: normal;
-        font-weight: 400;
     }
     .header__menu{
         display: block;
@@ -542,27 +481,67 @@
     .header__menu-items{
         display: flex;
         justify-content: flex-end;
-        padding: 10px 160px 10px 0;
+        padding: 10px 160px 10px;
         gap: 42px;
     }
     .header__menu-item{
-        list-style-type:none;
+        list-style-type: none;
         display: flex;
         padding: 16px;
-        justify-content: center;
-        align-items: center;
-        color: #B8B8B8;
-        font-family: "RF Dewi",sans-serif;
+        color: rgb(184, 184, 184);
+        font-family: "RF Dewi", sans-serif;
         font-size: 16px;
         font-style: normal;
         font-weight: 700;
-        line-height: 100%;
         text-transform: uppercase;
+        border: 2px solid #000;
+        transition: color 0.5s ease, border 0.5s ease;
+        white-space: nowrap;
     }
     .header__menu-item:hover{
         cursor: pointer;
         color: #fff;
-        transition: color 0.5s ease;
+        border: 2px solid #fff;
+        transition: color 0.5s ease, border 0.5s ease;
+    }
+    .footer__container{
+        flex-direction: row;
+        padding: 102px 160px 59px 160px;
+        justify-content: center;
+        align-items: center;
+        background-size: 40vw;
+        background-position: right 120%;
+    }
+    .footer__container::after {
+        background-size: 40vw;
+        background-position: right 120%;
+    }
+    .footer__left-section{
+        display: flex;
+        width: 623px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        flex-shrink: 0;
+    }
+    .footer__form {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .footer__form--wrapper{
+        display: flex;
+        flex-direction: row;
+        width: 100%
+    }
+    .footer__form-text{
+        width: 100%;
+    }
+    .footer__form > :nth-child(2) {
+        flex-basis: 100%;
+    }
+    .footer__right-section{
+        align-self: flex-end;
     }
 }
 
