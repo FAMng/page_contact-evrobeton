@@ -4,11 +4,17 @@
     margin: 0;
     border: 0;
 }
-body{
+html,body{
     font-family: "RF Dewi", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
+}
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
 }
 .header__container{
     background: #fff;
@@ -18,7 +24,7 @@ body{
     align-items: center;
     gap: 16px;
 }
-.header__link-logo{
+.header__link--logo{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,28 +33,36 @@ body{
 .header__logo-text{
     display: none;
 }
-.header__link-logo img {
+.header__link--logo img {
     max-width: 100%;
     max-height: 100%;
     display: block;
 }
-.header__btn-callback{
-    border: 2px solid #000;
+.btn--style{
     display: flex;
-    padding: 10px 8px;
     justify-content: center;
     align-items: center;
-    background: none;
-
-    color: #000;
+    padding: 10px 8px;
     font-family: "RF Dewi", sans-serif;
-    font-size: 14px;
+    font-style: normal;
     font-weight: 700;
     text-transform: uppercase;
+    transition: color 0.5s ease, background 0.5s ease;
+}
+.header__btn-callback{
+    border: 2px solid #000;
+    background: #ffff;
+    color: #000;
+    font-size: 14px;
     white-space : nowrap;
+}
+.header__btn-callback:hover{
+    cursor: pointer;
+    background: #161515;
+    color: #ffffff;
     transition: background-color 0.5s ease, color 0.5s ease  ;
 }
-.header__link-phone{
+.header__link--phone{
     display: flex;
     padding: 8px;
     justify-content: center;
@@ -57,13 +71,8 @@ body{
     border: 2px solid #E63E35;
     text-decoration: none;
 }
-.header__btn-callback:hover{
-    cursor: pointer;
-    background: #161515;
-    color: #ffffff;
-    transition: background-color 0.5s ease, color 0.5s ease  ;
-}
-.header__link-phone--tel, .header__link-phone--description{
+.header__link-phone--tel,
+.header__link-phone--description{
     display: none;
 }
 .header__btn{
@@ -83,7 +92,6 @@ body{
     position: relative;
     z-index: 1;
 }
-
 .menu span {
     display: block;
     width: 18px;
@@ -106,12 +114,14 @@ body{
     transform: translateY(-6px) rotate(-45deg);
     background-color: #000;
 }
+.header__menu{
+    display: none;
+}
 .contacts{
     display: flex;
     flex-direction: column;
-}
-.header__menu{
-    display: none;
+    position: absolute;
+    top: 57px;
 }
 .contacts__info{
     display: flex;
@@ -122,13 +132,6 @@ body{
     background: #000;
     color: #fff;
 }
-.contacts__info--container{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    align-self: stretch;
-}
 .contacts__info-title{
     font-family: "RF Dewi Expanded", sans-serif;
     font-size: 34px;
@@ -137,26 +140,22 @@ body{
     font-style: normal;
     text-transform: uppercase;
 }
-.instagram{
-    fill: white;
-}
-.instagram:hover{
-    fill: #E63E35;
-    transition: fill 0.5s ease;
-}
+.instagram,
 .vk{
     fill: white;
 }
+.instagram:hover,
 .vk:hover{
-    transition: fill 0.5s ease;
     fill: #E63E35;
+    transition: fill 0.5s ease;
 }
 .contacts__info_connect--container{
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
-.contacts__info_connect-title, .contacts__info_footer-title{
+.contacts__info-connect-title,
+.contacts__info-footer-title{
     color: #5D5D5D;
     font-family: "RF Dewi Expanded", sans-serif;
     font-size: 18px;
@@ -164,26 +163,28 @@ body{
     font-style: normal;
     line-height: 120%;
 }
-.contacts__info_connect-text, .contacts__info_footer-text{
+.contacts__info-connect-text,
+.contacts__info-footer-text{
     line-height: 150%;
 }
-.connect-text-link{
+.connect--link,
+.contacts__people-office-item-text--job-title{
     color: #E63E35;
     line-height: 150%;
 }
-.contacts__info_connect-socials {
+.contacts__info-connect-socials {
     display: flex;
     align-items: center;
     width: 24px;
     height: 24px;
     gap: 16px;
 }
-.contacts__info_connect-social {
+.contacts__info-connect-social {
     max-width: 100%;
     max-height: 100%;
     cursor: pointer;
 }
-.contacts__info_footer{
+.contacts__info-footer{
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -196,7 +197,8 @@ body{
     align-items: flex-start;
     gap: 32px;
 }
-.contacts__people-office, .contacts__people-production{
+.contacts__people-office,
+.contacts__people-production{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -211,28 +213,22 @@ body{
     line-height: 150%;
     text-transform: uppercase;
 }
-.contacts__people_office-items{
+.contacts__people-office-items{
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-.contacts__people_office-item{
+.contacts__people-office-item{
     display: flex;
     align-items: center;
     gap: 32px;
-    align-self: stretch;
-    list-style: none;
 }
-.contacts__people_office-item-text--name{
+.contacts__people-office-item-text--name{
     font-family: "RF Dewi Expanded", sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 900;
     line-height: 120%;
-}
-.contacts__people_office-item-text--job-title {
-    color: #E63E35;
-    line-height: 150%;
 }
 .contacts__description{
     display: flex;
@@ -240,7 +236,7 @@ body{
     justify-content: center;
     align-self: center;
 }
-.contacts__description--container{
+.contacts__description-container{
     padding: 32px 16px;
     display: flex;
     flex-direction: column;
@@ -257,6 +253,7 @@ body{
 }
 .contacts__description-item--text{
     line-height: 150%;
+    width: 90vw;
 }
 .footer {
     color: #fff;
@@ -283,7 +280,7 @@ body{
     background-size: 80vw; /* Размер первой части изображения */
     background-position: right 100%;
 }
-.footer__title{
+.footer__header-lable--title{
     font-family: "RF Dewi Expanded", sans-serif;
     font-size: 24px;
     font-style: normal;
@@ -292,7 +289,7 @@ body{
     text-transform: uppercase;
     margin-bottom: 16px;
 }
-.footer__subtext{
+.footer__header-lable--subtext{
     line-height: 150%;
 }
 .footer__left-section{
@@ -318,47 +315,32 @@ body{
     border: 2px solid #161515;
     transition: color 0.5s ease, border 0.5s ease;
 }
-.footer__form-text:hover::placeholder{
-    font-family: "RF Dewi", sans-serif;
-    font-style: normal;
-    font-weight: 400;
+.footer__form-text:hover::placeholder,
+.footer__form-comment:hover::placeholder{
     color: #000;
-    transition: color 0.5s ease, border 0.5s ease;
+    transition: color 0.5s ease
 }
 .footer__form-comment{
     border: 2px solid #B8B8B8;
     background: #FFF;
-    height: 34px;
-    padding:20px 0 0 20px;
-}
-.footer__form-comment:hover::placeholder{
-    color: #000;
-    transition: color 0.5s ease, border 0.5s ease;
+    min-height: 18px;
+    max-height: 150px;
+    padding: 12px 24px;
 }
 .footer__form-comment:hover{
     border: 2px solid #161515;
-    transition: color 0.5s ease, border 0.5s ease;
+    transition:  border 0.5s ease;
 }
 .footer__form-btn{
     color: #FFF;
-    font-family: "RF Dewi", sans-serif;
     font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
-    text-transform: uppercase;
     width: 100%;
-    display: flex;
-    padding: 10px 8px;
-    justify-content: center;
-    align-items: center;
     background: #B8B8B8;
-    transition: color 0.5s ease, background 0.5s ease;
     cursor: pointer;
 }
 .footer__form-btn:hover{
-    background: #7c7c7c;
-    transition: color 0.5s ease, background 0.5s ease;
+    background: #E63E35;
+    transition: background 0.5s ease;
 }
 .footer__form-comment{
     resize: vertical;
@@ -381,11 +363,12 @@ body{
     text-align: right;
     z-index: 2;
 }
-.footer__right-section_tel, .footer__right-section_mail{
+.footer__right-section--tel,
+.footer__right-section--mail{
     color: #E63E35;
     text-decoration: none;
 }
-.footer__right-section_rights{
+.footer__right-section--rights{
     color: #5D5D5D;
     line-height: 150%;
 }
@@ -400,52 +383,52 @@ body{
         text-transform: uppercase;
         color: #2C2B2E;
         font-family: "RF Dewi Expanded", sans-serif;
-        font-size: 31.197px;
+        font-size: 32px;
         font-style: normal;
         font-weight: 900;
         line-height: 120%;
     }
-    .contacts__description--container{
-        margin: 100px 0 100px 0;
+    .contacts__description-container{
+        margin: 100px 0;
+        padding: 60px;
     }
     .contacts__people{
-        padding: 64px 160px 0 40px;
-        height: 90vh;
-        overflow-y: auto ;
-    }
-    .contacts__people::-webkit-scrollbar {
-        display: none;
-    }
-    .contacts__info{
-        padding: 64px 64px 64px 160px;
+        padding: 64px 40px 0 40px;
     }
     .contacts__container{
         display: flex;
-        justify-content: flex-start;
     }
-    .contacts__people_office-items {
+    .contacts__people-office-items {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 30px 16px;
     }
-
+    .contacts{
+        position: absolute;
+        top: 49px;
+    }
+    .contacts__info{
+        height: 100vh;
+        padding: 64px;
+        position: sticky;
+        top:49px;
+    }
 }
 @media (min-width:1024px){
-
     .header__container{
         justify-content: flex-start;
         padding: 15px 160px;
         gap: 32px;
     }
-    .header__btn{
+    .header__btn,
+    .header__image-phone{
         display: none;
     }
-    .header__link-logo{
-        width: auto;
+    .header__link--logo{
         margin-right: auto;
         cursor: pointer;
     }
-    .header__link-phone{
+    .header__link--phone{
         flex-direction: column;
         padding: 0;
         justify-content: center;
@@ -453,10 +436,8 @@ body{
         gap: 0;
         border: none;
     }
-    .header__image-phone{
-        display: none;
-    }
-    .header__link-phone--tel,.header__link-phone--description{
+    .header__link-phone--tel,
+    .header__link-phone--description{
         display: block;
     }
     .header__link-phone--tel{
@@ -477,6 +458,8 @@ body{
         background: #000;
         color: #fff;
         text-decoration: none;
+        position: sticky;
+        top:0;
     }
     .header__menu-items{
         display: flex;
@@ -488,21 +471,43 @@ body{
         list-style-type: none;
         display: flex;
         padding: 16px;
-        color: rgb(184, 184, 184);
         font-family: "RF Dewi", sans-serif;
         font-size: 16px;
         font-style: normal;
         font-weight: 700;
         text-transform: uppercase;
         border: 2px solid #000;
-        transition: color 0.5s ease, border 0.5s ease;
+        transition: border 0.5s ease;
         white-space: nowrap;
     }
     .header__menu-item:hover{
         cursor: pointer;
-        color: #fff;
         border: 2px solid #fff;
-        transition: color 0.5s ease, border 0.5s ease;
+        transition: border 0.5s ease;
+    }
+    .header__menu-item-link{
+        text-decoration: none;
+        color: rgb(184, 184, 184);
+        transition: color 0.5s ease;
+    }
+    .header__menu-item:hover .header__menu-item-link{
+        color: #fff;
+        transition: color 0.5s ease;
+    }
+    .contacts,
+    .contacts__info{
+        top: 149px;
+    }
+    .contacts__info{
+        padding: 64px 64px 64px 160px;
+    }
+    .contacts__people-office-item {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        align-self: stretch;
+        list-style: none;
+        max-width: 372px;
     }
     .footer__container{
         flex-direction: row;
@@ -532,9 +537,9 @@ body{
     .footer__form--wrapper{
         display: flex;
         flex-direction: row;
-        width: 100%
     }
-    .footer__form-text{
+    .footer__form-text,
+    .footer__form--wrapper{
         width: 100%;
     }
     .footer__form > :nth-child(2) {
@@ -544,4 +549,3 @@ body{
         align-self: flex-end;
     }
 }
-
