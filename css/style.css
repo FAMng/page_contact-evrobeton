@@ -432,6 +432,7 @@ html,body{
         top: 49px;
     }
     .contacts__info{
+        height: 90vh;
         padding: 64px;
         position: sticky;
         top:49px;
@@ -459,6 +460,10 @@ html,body{
         gap: 0;
         border: none;
     }
+    .header__link--phone:hover .header__link-phone--tel{
+        color: #000;
+        transition: all 0.5s ease;
+    }
     .header__link-phone--tel,
     .header__link-phone--description{
         display: block;
@@ -471,6 +476,7 @@ html,body{
         font-style: normal;
         font-weight: 900;
         white-space : nowrap;
+        transition: all 0.5s ease;
     }
     .header__link-phone--description{
         color: #000;
@@ -522,7 +528,6 @@ html,body{
         top: 145px;
     }
     .contacts__info{
-        height: 80vh;
         padding: 64px 64px 64px 160px;
     }
     .contacts__people-office-item {
