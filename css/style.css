@@ -475,14 +475,14 @@ html,body{
         font-style: normal;
         font-weight: 700;
         text-transform: uppercase;
-        border: 2px solid #000;
-        transition: border 0.5s ease;
+        outline: 2px solid #000;
+        transition: outline 0.5s ease;
         white-space: nowrap;
     }
     .header__menu-item:hover{
         cursor: pointer;
-        border: 2px solid #fff;
-        transition: border 0.5s ease;
+        outline: 2px solid #fff;
+        transition: outline 0.5s ease;
     }
     .header__menu-item-link{
         text-decoration: none;
@@ -495,7 +495,7 @@ html,body{
     }
     .contacts,
     .contacts__info{
-        top: 149px;
+        top: 145px;
     }
     .contacts__info{
         padding: 64px 64px 64px 160px;
