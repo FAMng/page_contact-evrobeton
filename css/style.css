@@ -513,8 +513,6 @@ html,body{
         padding: 102px 160px 59px 160px;
         justify-content: center;
         align-items: center;
-        background-size: 40vw;
-        background-position: right 120%;
     }
     .footer__container::after {
         background-size: 40vw;
