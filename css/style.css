@@ -10,6 +10,31 @@ html,body{
     font-style: normal;
     font-weight: 400;
 }
+.off-scroll{
+    overflow: hidden;
+}
+.open{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #E63E35;
+}
+.open__menu-style li{
+    list-style-type: none;
+}
+.open__menu-style li a{
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    font-family: "RF Dewi", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+}
 .header{
     position: fixed;
     top: 0;
@@ -407,7 +432,6 @@ html,body{
         top: 49px;
     }
     .contacts__info{
-        height: 100vh;
         padding: 64px;
         position: sticky;
         top:49px;
@@ -498,6 +522,7 @@ html,body{
         top: 145px;
     }
     .contacts__info{
+        height: 80vh;
         padding: 64px 64px 64px 160px;
     }
     .contacts__people-office-item {
