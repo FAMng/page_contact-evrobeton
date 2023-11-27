@@ -232,7 +232,6 @@ html,body{
 }
 .contacts__description{
     display: flex;
-    max-width: 1279px;
     justify-content: center;
     align-self: center;
 }
@@ -240,6 +239,7 @@ html,body{
     padding: 32px 16px;
     display: flex;
     flex-direction: column;
+    max-width: 1279px;
     gap: 24px;
     color:  #5D5D5D;
 }
@@ -253,7 +253,6 @@ html,body{
 }
 .contacts__description-item--text{
     line-height: 150%;
-    width: 90vw;
 }
 .footer {
     color: #fff;
@@ -277,7 +276,7 @@ html,body{
             linear-gradient(rgba(22, 21, 21, 0.8), rgba(22, 21, 21, 0.8)),
             url("../img/footer-logo.png");
     background-repeat: no-repeat;
-    background-size: 80vw; /* Размер первой части изображения */
+    background-size: 80vw;
     background-position: right 100%;
 }
 .footer__header-lable--title{
@@ -532,7 +531,6 @@ html,body{
     .footer__form {
         flex-direction: row;
         flex-wrap: wrap;
-        width: 100%;
     }
     .footer__form--wrapper{
         display: flex;
